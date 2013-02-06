@@ -27,5 +27,5 @@ References
 
 Screenshot
 ----------
-![screenshot](https://github.com/khughitt/baltimore_ggplot2/blob/master/result.png)
+![screenshot](https://raw.github.com/khughitt/baltimore_ggplot2/master/result.png)
 
