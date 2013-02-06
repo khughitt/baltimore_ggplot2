@@ -6,7 +6,7 @@ Overview
 The goal of this script is to create a simple plot relating
 number of arrests and prescence of CCTV cameria in Baltimore
 city. This is part of a class exercise for the [CMSC 702](http://www.cbcb.umd.edu/~hcorrada/CMSC702/)
-at [UMD](http://umd.edu/) taught by [Héctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada/).
+at [University of Maryland](http://umd.edu/) taught by [Héctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada/).
 
 Note that the [GDAL](http://www.gdal.org/) library is needed in order to 
 install the rgdal binding.
@@ -27,5 +27,5 @@ References
 
 Screenshot
 ----------
-![screenshot](https://github.com/khughitt/baltimore_ggplot2/blob/master/result.svg)
+![screenshot](https://github.com/khughitt/baltimore_ggplot2/blob/master/result.png)
 
