@@ -51,7 +51,8 @@ baltimore = plot_bmore()
 
 # Plot 2d histogram of arrests
 # could also use geom_bin2d, geom_density2d, etc.            
-baltimore + geom_hex(data=arrest_coords, aes(x=long, y=lat, alpha=0.5)) +
+baltimore + geom_point(data=camera_coords, aes(x=long, y=lat, color='black')) +
+            geom_hex(data=arrest_coords, aes(x=long, y=lat, alpha=0.5)) +
             scale_fill_gradient(low="blue", high="red")
 
 ###########################################################
