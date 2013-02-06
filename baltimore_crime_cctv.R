@@ -33,27 +33,36 @@ library(spatstat)
 library(ggmap)
 library(rgeos)
 
-# Load data
-arrests = read.csv('data/BPD_Arrests.csv')
-cameras = read.csv('data/CCTV_Locations.csv')
+###########################################################
+#
+# Main
+#
+###########################################################
+main = function() {
 
-# Clean up arrests dataset
-names(arrests)[3] = "race"
-names(arrests)[4] = "sex"
-arrests = arrests[arrests$Location.1 != "",]
+    # Load data
+    arrests = read.csv('data/BPD_Arrests.csv')
+    cameras = read.csv('data/CCTV_Locations.csv')
 
-# Parse coordinates
-arrest_coords = parse_coords(arrests)
-camera_coords = parse_coords(cameras)
+    # Clean up arrests dataset
+    names(arrests)[3] = "race"
+    names(arrests)[4] = "sex"
+    arrests = arrests[arrests$Location.1 != "",]
 
-# Draw a map of Baltimore
-baltimore = plot_bmore()
+    # Parse coordinates
+    arrest_coords = parse_coords(arrests)
+    camera_coords = parse_coords(cameras)
 
-# Plot 2d histogram of arrests
-# could also use geom_bin2d, geom_density2d, etc.            
-baltimore + geom_point(data=camera_coords, aes(x=long, y=lat, color='black')) +
-            geom_hex(data=arrest_coords, aes(x=long, y=lat, alpha=0.5)) +
-            scale_fill_gradient(low="blue", high="red")
+    # Draw a map of Baltimore
+    baltimore = plot_bmore()
+
+    # Plot 2d histogram of arrests
+    # could also use geom_bin2d, geom_density2d, etc.            
+    baltimore + geom_point(data=camera_coords, aes(x=long, y=lat, color='black')) +
+                geom_hex(data=arrest_coords, aes(x=long, y=lat, alpha=0.5)) +
+                scale_fill_gradient(low="blue", high="red")
+
+}
 
 ###########################################################
 #
@@ -106,5 +115,11 @@ plot_bmore = function () {
 
     return(nbhds_plot)
 }
+
+#
+# Execute main
+#
+result = main()
+
 
 
