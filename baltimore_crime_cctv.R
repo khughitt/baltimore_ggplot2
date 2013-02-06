@@ -103,7 +103,7 @@ plot_bmore = function () {
     nbhds_pl_df <- fortify(nbhds_shp, region='LABEL')
     nbhds_plot <- bound_plot + geom_polygon(data=nbhds_pl_df, color='gray',
                                             fill='white')
-                                            
+
     return(nbhds_plot)
 }
 
